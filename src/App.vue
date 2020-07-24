@@ -1,14 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <mt-header fixed :title="$route.meta.title">
+        <a @click="acli" slot="left">
+          <mt-button icon="back">返回</mt-button>
+        </a>
+    </mt-header>
     <router-view/>
+    <Tabnav></Tabnav>
   </div>
 </template>
-
+<script>
+import Tabnav from './components/Tabnav.vue'
+export default {
+  name:"app",
+  methods:{
+    acli(){
+      this.$router.go(-1)
+    }
+  },
+  components:{
+    Tabnav
+  }
+}
+</script>
 <style lang="scss">
+body{
+  padding: 0;
+  margin: 0;
+  background: #f5f5f5;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

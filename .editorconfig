@@ -1,0 +1,8 @@
+   indent_style = space
+    //缩进风格：空格
+    indent_size = 2
+    //缩进大小：2
+    trim_trailing_whitespace = true
+    //自动过滤空格：是
+    insert_final_newline = true
+    //在最后插入新行:是
